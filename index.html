@@ -72,27 +72,65 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    /* Capsule-style navbar */
+    .capsule-navbar {
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+      z-index: 1000;
+      border: none;
+    }
+
+    .capsule-container {
+      background: #f5effc;
+      border-radius: 50px;
+      box-shadow: 0 4px 16px rgba(42, 36, 49, 0.05);
+      max-width: 1000px;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .capsule-container .navbar-nav .nav-link {
+      padding: 0.5rem 1rem;
+      color: #454546;
+      font-weight: 500;
+      border-radius: 30px;
+      transition: background-color 0.2s;
+    }
   </style>
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <div class="container">
+
+  <!-- Capsule Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light capsule-navbar sticky-top">
+    <div class="capsule-container px-4 py-2">
       <a class="navbar-brand font-weight-bold" href="#">Srujana <span class="font-weight-normal">Vanka</span></a>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#achievements">Achievements, Certifications & POR</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#get-in-touch">Contact</a></li>
-      </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements, Certifications & POR</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#get-in-touch">Let's Connect!</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
+
   <main>
     <!-- Hero Section -->
-    <section class="section bg-soft pb-7 pt-7 overflow-hidden z-2">
+    <section class="section bg-soft pb-7 pt-8 overflow-hidden z-2">
       <div class="container z-2">
         <div class="row align-items-center pt-6 pb-6">
 
@@ -104,7 +142,7 @@
 
           <!-- Right Column: Text -->
           <div class="col-md-6 order-md-2 text-center text-md-left">
-            <h1 class="hero-title mb-3">Hi, I'm<br><strong>Srujana</strong> Vanka</h1>
+            <h1 class="hero-title mb-3">Hey! I'm<br><strong>Srujana</strong> Vanka</h1>
             <p class="lead mb-3">Software Engineer | IIIT Hyderabad Alumna | Kuchipudi Artist</p>
             <p>
               Driven by curiosity and a love for learning, I focus on building scalable and efficient backend systems
@@ -117,7 +155,7 @@
               <i class="fas fa-file-alt icon-custom mr-2"></i>View Resume
             </a>
             <a class="btn btn-primary mt-3" href="#get-in-touch">
-              <i class="fas fa-envelope icon-custom mr-2"></i>Get in Touch!
+              <i class="fas fa-envelope icon-custom mr-2"></i>Let's Connect!
             </a>
           </div>
 
@@ -146,11 +184,12 @@
             <p class="text-muted mb-2">Software Development Engineer | July 2024 – Present</p>
             <div class="mb-2">
               <span class="badge badge-pill badge-light text-dark">Java</span>
+              <span class="badge badge-pill badge-light text-dark">Python</span>
               <span class="badge badge-pill badge-light text-dark">Spring Boot</span>
               <span class="badge badge-pill badge-light text-dark">FastAPI</span>
+              <span class="badge badge-pill badge-light text-dark">Cassandra</span>
               <span class="badge badge-pill badge-light text-dark">AWS</span>
               <span class="badge badge-pill badge-light text-dark">Grafana</span>
-              <span class="badge badge-pill badge-light text-dark">Python</span>
             </div>
             <p class="card-text mb-0">
               <li>Developing high-performance, scalable and efficient platform services that power internal APIs and
@@ -234,10 +273,11 @@
             <h5 class="card-title mb-1">Microsoft</h5>
             <p class="text-muted mb-2">Engage Mentee | April 2022 – May 2022</p>
             <div class="mb-2">
+              <span class="badge badge-pill badge-light text-dark">Python</span>
+              <span class="badge badge-pill badge-light text-dark">JWT</span>
               <span class="badge badge-pill badge-light text-dark">OpenCV</span>
               <span class="badge badge-pill badge-light text-dark">MySQL</span>
               <span class="badge badge-pill badge-light text-dark">Tkinter</span>
-              <span class="badge badge-pill badge-light text-dark">Python</span>
               <span class="badge badge-pill badge-light text-dark">HTML/CSS</span>
             </div>
             <ul class="pl-3 mb-0">
@@ -316,7 +356,7 @@
       <div class="container">
         <div class="row text-center mb-5">
           <div class="col">
-            <h2 class="h4">Achievements, Leadership & Certifications</h2>
+            <h2 class="h4">Achievements, Certifications & Positions of Responsibility</h2>
             <p class="text-muted">Leadership positions held, certifications completed, and recognitions for excellence.
             </p>
           </div>
@@ -364,7 +404,8 @@
                   <span class="achievement-tag">Open Source</span>
                 </div>
                 <h5 class="card-title">GirlScript Summer of Code</h5>
-                <p class="mb-0 mt-auto">Contributed to 6 repositories, opened 18 PRs, ranked 106th among 13,000+ candidates.</p>
+                <p class="mb-0 mt-auto">Contributed to 6 repositories, opened 18 PRs, ranked 106th among 13,000+
+                  candidates.</p>
               </div>
             </div>
           </div>
@@ -378,7 +419,8 @@
                   <span class="achievement-tag">Leadership</span>
                 </div>
                 <h5 class="mb-1"> Joint Cultural Secretary</h5>
-                <p class="mb-0 mt-auto">Planned, coordinated, and led flagship cultural events at IIIT-H, fostering campus-wide engagement and collaboration.</p>
+                <p class="mb-0 mt-auto">Planned, coordinated, and led flagship cultural events at IIIT-H, fostering
+                  campus-wide engagement and collaboration.</p>
               </div>
             </div>
           </div>
@@ -409,16 +451,16 @@
             </div>
           </div>
 
+    
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="card shadow-soft border-light p-3 h-100">
               <div class="card-body d-flex flex-column">
-                <div class="achievement-header mb-2">
-                  <i class="fas fa-hands-helping icon-custom"></i>
-                  <span class="achievement-tag">Community Service</span>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <i class="fas fa-chalkboard-teacher icon-custom"></i>
+                  <span class="achievement-tag">Mentorship</span>
                 </div>
-
-                <h5 class="mb-1">NSS Member</h5>
-                <p class="mb-0 mt-auto">Volunteered in outreach & social service programs under NSS IIIT-H.</p>
+                <h5 class="card-title">Teaching Assistant</h5>
+                <p class="mb-0 mt-auto">Assisted Real Analysis and Science-1 courses at IIIT-H under professors</p>
               </div>
             </div>
           </div>
@@ -436,19 +478,20 @@
             </div>
           </div>
 
-
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="card shadow-soft border-light p-3 h-100">
               <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <i class="fas fa-chalkboard-teacher icon-custom"></i>
-                  <span class="achievement-tag">Mentorship</span>
+                <div class="achievement-header mb-2">
+                  <i class="fas fa-hands-helping icon-custom"></i>
+                  <span class="achievement-tag">Community Service</span>
                 </div>
-                <h5 class="card-title">Teaching Assistant</h5>
-                <p class="mb-0 mt-auto">Assisted Real Analysis and Science-1 courses at IIIT-H under professors</p>
+
+                <h5 class="mb-1">NSS Member</h5>
+                <p class="mb-0 mt-auto">Volunteered in outreach & social service programs under NSS IIIT-H.</p>
               </div>
             </div>
           </div>
+
 
           <!-- Flipkart Runway -->
           <div class="col-12 col-md-6 col-lg-3 mb-4">
@@ -498,127 +541,101 @@
       </div>
     </section>
 
-
-
-    <!-- Projects Section -->
     <section class="section section-lg" id="projects">
       <div class="container">
         <div class="row text-center mb-5">
           <div class="col">
             <h2 class="h4">Projects</h2>
-            <p>A collection of full-stack applications, machine learning models, and algorithm-driven projects
-              showcasing diverse technical skills and innovation.</p>
+            <p>
+              A collection of full-stack applications, machine learning models, and algorithm-driven projects
+              <br>showcasing diverse technical skills and innovation.<br>
+           
+          
+              <a href="https://github.com/srujana-16" target="_blank" class="text-decoration-none">
+                Many more on my <i class="fab fa-github mr-1"></i>
+              </a> </p>
           </div>
         </div>
-        <div class="row justify-content-between">
 
-          <!-- Project 1 -->
+
+        <div class="row justify-content-center">
+
+          <!-- Project Button 1 -->
           <div class="col-12 col-md-6 col-lg-4 mb-4">
-            <div class="card bg-soft shadow-soft border-light p-3">
-              <div class="card-body">
-                <h5 class="card-title mb-2">
-                  <i class="fas fa-chart-line icon-custom"></i> COVID Gene Sequence Prediction
-                </h5>
-                <h6 class="text-muted mb-2"><strong>Tech Stack: Flask, JWT, Python, Node.js, Docker</strong></h6>
-                <p class="card-text">COVID genome sequence predictor with JWT authentication, data visualizations,
-                  real-time location mapping, and scalable deployment.</p>
-                <a href="https://github.com/srujana-16/Gene-Sequence-Location-Prediction" target="_blank"
-                  class="btn btn-sm btn-primary mt-2">
-                  <i class="fab fa-github mr-1"></i>View Code
-                </a>
-              </div>
-            </div>
+            <a class="btn btn-primary d-block text-left h-100 p-4"
+              href="https://github.com/srujana-16/Gene-Sequence-Location-Prediction" target="_blank"
+              style="border-radius: 16px;">
+              <h5 class="card-title mb-2"><i class="fas fa-chart-line icon-custom"></i> COVID Gene Sequence Prediction
+              </h5>
+              <h6 class="text-muted mb-2"><strong>Tools and Technologies: Flask, JWT, Python, Node.js, Docker</strong>
+              </h6>
+              <p class="card-text">COVID genome sequence predictor with JWT authentication, data visualizations,
+                real-time location mapping, and and containerized services for efficient deployment.</p>
+
+            </a>
           </div>
 
-          <!-- Project 2 -->
+          <!-- Project Button 2 -->
           <div class="col-12 col-md-6 col-lg-4 mb-4">
-            <div class="card bg-soft shadow-soft border-light p-3">
-              <div class="card-body">
-                <h5 class="card-title mb-2">
-                  <i class="fas fa-pen-nib icon-custom"></i> Speech Transcription Verifier
-                </h5>
-                <h6 class="text-muted mb-2"><strong>Tech Stack: JavaScript, Python, REST API, Docker</strong></h6>
-                <p class="card-text">Full-stack app to verify speech transcriptions with audio playback and virtual
-                  keyboard support. Backend is Dockerized and integrated with secure APIs.</p>
-                <a href="https://github.com/srujana-16/Speech-Transcription-Verification" target="_blank"
-                  class="btn btn-sm btn-primary mt-2">
-                  <i class="fab fa-github mr-1"></i>View Code
-                </a>
-              </div>
-            </div>
+            <a class="btn btn-primary d-block text-left h-100 p-4"
+              href="https://github.com/srujana-16/Speech-Transcription-Verification" target="_blank"
+              style="border-radius: 16px;">
+              <h5 class="card-title mb-2"><i class="fas fa-pen-nib icon-custom"></i> Speech Transcription Verifier</h5>
+              <h6 class="text-muted mb-2"><strong>Tools and Technologies: JavaScript, Python, REST API, Docker</strong>
+              </h6>
+              <p class="card-text">Full-stack app to verify speech transcriptions with audio playback and virtual
+                keyboard support. Backend is Dockerized and integrated with secure APIs.</p>
+            </a>
           </div>
 
-          <!-- Project 3 -->
+          <!-- Project Button 3 -->
           <div class="col-12 col-md-6 col-lg-4 mb-4">
-            <div class="card bg-soft shadow-soft border-light p-3">
-              <div class="card-body">
-                <h5 class="card-title mb-2">
-                  <i class="fas fa-users icon-custom"></i> Face Recognition CNN
-                </h5>
-                <h6 class="text-muted mb-2"><strong>Tech Stack: Python, OpenCV, CNN</strong></h6>
-                <p class="card-text">Implemented specialized CNN models for facial recognition considering orientation
-                  and demographic variance, achieving over 97% accuracy across diverse datasets.</p>
-                <a href="https://github.com/srujana-16/Face-Recognition-Using-Deep-Convolutional-Neural-Networks"
-                  target="_blank" class="btn btn-sm btn-primary mt-2">
-                  <i class="fab fa-github mr-1"></i>View Code
-                </a>
-              </div>
-            </div>
+            <a class="btn btn-primary d-block text-left h-100 p-4"
+              href="https://github.com/srujana-16/Face-Recognition-Using-Deep-Convolutional-Neural-Networks"
+              target="_blank" style="border-radius: 16px;">
+              <h5 class="card-title mb-2"><i class="fas fa-users icon-custom"></i> Face Recognition CNN</h5>
+              <h6 class="text-muted mb-2"><strong>Tools and Technologies: Python, OpenCV, CNN</strong></h6>
+              <p class="card-text">Implemented specialized CNN models for facial recognition considering orientation and
+                demographic variance, achieving over 97% accuracy across diverse datasets.</p>
+            </a>
           </div>
 
-          <!-- Project 4 -->
           <div class="col-12 col-md-6 col-lg-4 mb-4">
-            <div class="card bg-soft shadow-soft border-light p-3">
-              <div class="card-body">
-                <h5 class="card-title mb-2">
-                  <i class="fas fa-hands-helping icon-custom"></i> Smart Routing System
-                </h5>
-                <h6 class="text-muted mb-2"><strong>Tech Stack: C, Data Structures</strong></h6>
-                <p class="card-text">Modified Dijkstra’s algorithm to navigate shortest paths with dynamic edge weights.
-                  Enabled adaptive routing to handle unpredictable events using core algorithmic techniques.</p>
-                <a href="https://github.com/srujana-16/Routing-DSA-project" target="_blank"
-                  class="btn btn-sm btn-primary mt-2">
-                  <i class="fab fa-github mr-1"></i>View Code
-                </a>
-              </div>
-            </div>
+            <a class="btn btn-primary d-block text-left h-100 p-4"
+              href="https://github.com/srujana-16/Attendance-Management-System-Using-Face-Recognition" target="_blank"
+              style="border-radius: 16px;">
+              <h5 class="card-title mb-2"><i class="fas fa-chalkboard-teacher icon-custom"></i> Facial Recognition
+                Attendance System</h5>
+              <h6 class="text-muted mb-2"><strong>Tools and Technologies: Python, OpenCV, Tkinter, MySQL, JWT</strong>
+              </h6>
+              <p class="card-text">Designed a facial recognition-based attendance system with 99% accuracy.
+                Integrated a Tkinter interface and MySQL backend for seamless data management.</p>
+            </a>
           </div>
 
-          <!-- Project 5 -->
           <div class="col-12 col-md-6 col-lg-4 mb-4">
-            <div class="card bg-soft shadow-soft border-light p-3">
-              <div class="card-body">
-                <h5 class="card-title mb-2">
-                  <i class="fas fa-rocket icon-custom"></i> Empty Parking Space Detector
-                </h5>
-                <h6 class="text-muted mb-2"><strong>Tech Stack: Python, OpenCV</strong></h6>
-                <p class="card-text">Developed a real-time empty parking slots detector using frame differencing and
-                  contour analysis achieving 99% detection accuracy.</p>
-                <a href="https://github.com/srujana-16/Empty-Parking-Space-Detector" target="_blank"
-                  class="btn btn-sm btn-primary mt-2">
-                  <i class="fab fa-github mr-1"></i>View Code
-                </a>
-              </div>
-            </div>
+            <a class="btn btn-primary d-block text-left h-100 p-4"
+              href="https://github.com/srujana-16/Empty-Parking-Space-Detector" target="_blank"
+              style="border-radius: 16px;">
+
+              <h5 class="card-title mb-2"><i class="fas fa-rocket icon-custom"></i> Empty Parking Space Detector
+              </h5>
+              <h6 class="text-muted mb-2"><strong>Tools and Technologies: Python, OpenCV</strong></h6>
+              <p class="card-text">Developed a real-time empty parking slots detector using frame differencing and
+                contour analysis achieving 99% accuracy.</p>
+
+            </a>
           </div>
 
-          <!-- Project 6 -->
           <div class="col-12 col-md-6 col-lg-4 mb-4">
-            <div class="card bg-soft shadow-soft border-light p-3">
-              <div class="card-body">
-                <h5 class="card-title mb-2">
-                  <i class="fas fa-chalkboard-teacher icon-custom"></i> Facial Recognition Attendance System
-                </h5>
-                <h6 class="text-muted mb-2"><strong>Tech Stack: Python, OpenCV, Tkinter, MySQL</strong></h6>
-                <p class="card-text">Designed a facial recognition-based attendance system with 99%
-                    accuracy. Built a user-friendly Tkinter interface and MySQL backend for seamless data
-                  management.</p>
-                <a href="https://github.com/srujana-16/Attendance-Management-System-Using-Face-Recognition"
-                  target="_blank" class="btn btn-sm btn-primary mt-2">
-                  <i class="fab fa-github mr-1"></i>View Code
-                </a>
-              </div>
-            </div>
+            <a class="btn btn-primary d-block text-left h-100 p-4"
+              href="https://github.com/srujana-16/Routing-DSA-project" target="_blank" style="border-radius: 16px;">
+              <h5 class="card-title mb-2"><i class="fas fa-hands-helping icon-custom"></i> Smart Routing System</h5>
+              <h6 class="text-muted mb-2"><strong>Tools and Technologies: C, Data Structures</strong></h6>
+              <p class="card-text">Modified Dijkstra’s algorithm with dynamic edge weights. Enabled adaptive routing
+                using core algorithmic techniques.</p>
+
+            </a>
           </div>
 
         </div>
@@ -661,17 +678,21 @@
         </div>
 
       </div>
-    </section>
 
-    <footer class="d-flex pb-5 pt-6 border-top border-light">
-      <div class="container">
+      <!--footer-->
+      <div class="container pt-5">
         <div class="row">
           <div class="col text-center text-github">
-            <p class="font-small mb-0">© 2025 Srujana Vanka</p>
+            <p class="font-small mb-1">
+              Thanks for scrolling all the way — you’re awesome!
+            </p>
+            <p class="font-small mb-0">
+              © 2025 Srujana Vanka. All rights reserved. Last updated in July 2025.
+            </p>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 </body>
 </main>
 
